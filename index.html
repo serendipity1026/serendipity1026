@@ -62,30 +62,25 @@
     .section + .section { border-top: 1px solid var(--edge); }
     h2 { font-size: clamp(32px, 4.3vw, 52px); line-height: 1.12; letter-spacing: -.05em; font-weight: 750; }
     html[lang="en"] h2 { font-family: Georgia, serif; font-weight: 500; }
-    .paper { margin-top: 24px; display: grid; grid-template-columns: 1fr 1.08fr; border: 1px solid var(--edge); border-radius: 11px; overflow: hidden; background: var(--card); }
-    .paper-copy { align-self: center; padding: clamp(21px, 3.4vw, 41px); }
-    .paper-meta, .project-meta { color: var(--accent); font-size: 13px; font-weight: 750; }
-    .paper h3 { margin: 9px 0 12px; max-width: 52ch; font-size: clamp(19px, 2.35vw, 31px); font-weight: 700; line-height: 1.29; letter-spacing: -.025em; text-wrap: balance; }
+    .paper { margin-top: 24px; }
+    .paper .project-copy h3 { margin: 5px 0 10px; max-width: 52ch; font-weight: 700; letter-spacing: -.025em; text-wrap: balance; }
     .paper-byline { margin-block: 0 3px; color: var(--secondary); font-size: 14px; }
-    .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .paper-links .button-link { padding: 6px 11px; }
-    .paper-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-content: center; background: #11151c; padding: clamp(12px, 2.4vw, 28px); }
-    .paper-figures figure { min-width: 0; }
-    .figure-link { display: block; padding: 10px; background: #fff; border: 1px solid var(--edge); border-radius: 6px; }
-    .figure-link:hover { border-color: var(--accent); }
-    .figure-link img { width: 100%; aspect-ratio: 1.31; object-fit: contain; }
-    figcaption { margin-top: 6px; color: var(--secondary); font-size: 12px; }
+    .paper-originals { display: flex; flex-wrap: wrap; gap: 5px 11px; margin-top: 10px; color: var(--secondary); font-size: 12px; }
+    .paper-originals a { color: var(--accent); }
     .projects { display: grid; gap: 17px; margin-top: 24px; }
     .project { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(0, 1.6fr); align-items: stretch; overflow: hidden; border: 1px solid var(--edge); border-radius: 11px; background: var(--card); min-width: 0; }
     .photo-toggle { display: block; padding: 0; border: 0; background: var(--night); position: relative; width: 100%; min-height: 100%; aspect-ratio: 1.92; overflow: hidden; cursor: pointer; color: white; text-align: start; }
     .photo-toggle:focus-visible { outline-offset: -5px; }
     .photo-toggle img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: opacity .25s ease; }
+    .paper .photo-toggle img { padding: 14px 15px 42px; background: #11151c; object-fit: contain; }
     .photo-toggle .alternate { opacity: 0; }
     .photo-toggle[aria-pressed="true"] .alternate { opacity: 1; }
     @media (hover: hover) and (pointer: fine) { .photo-toggle:hover .alternate { opacity: 1; } }
     .photo-caption { position: absolute; inset: auto 12px 12px auto; display: inline-flex; align-items: center; gap: 8px; padding: 5px 9px; color: #fff; background: #101720eb; border: 1px solid #ffffff40; border-radius: 5px; font-size: 12px; }
     .project-copy { align-self: center; padding: clamp(18px, 3vw, 38px); }
-    .project-meta { display: flex; flex-wrap: wrap; gap: 5px 10px; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 5px 10px; color: var(--accent); font-size: 13px; font-weight: 750; }
     .project-meta span + span::before { content: "·"; margin-right: 10px; }
     .project h3 { margin-top: 4px; font-size: clamp(19px, 2.15vw, 28px); line-height: 1.28; }
     .project-copy p:last-child { margin-top: 9px; color: var(--secondary); font-size: 15px; }
@@ -116,7 +111,7 @@
       .topbar { align-items: start; padding-block: 12px; flex-wrap: wrap; gap: 9px; }
       .nav-actions { display: contents; }
       nav { order: 1; width: 100%; }
-      .hero, .paper, .project, .profile-row, .contact-grid { grid-template-columns: 1fr; }
+      .hero, .project, .profile-row, .contact-grid { grid-template-columns: 1fr; }
       .hero { gap: 19px; padding-block: 26px 33px; text-align: center; }
       .hero-portrait { width: 146px; justify-self: center; }
       .intro { margin-top: 19px; }
@@ -170,9 +165,14 @@
     <div class="wrap">
       <section class="section" id="learning" aria-labelledby="learning-title">
         <h2 id="learning-title" data-en="Academic Work">学术成果</h2>
-        <article class="paper">
-          <div class="paper-copy">
-            <p class="paper-meta" data-en="Conference Paper · Motor Drive Circuits">会议论文 · 电机驱动电路</p>
+        <article class="project paper">
+          <button type="button" class="photo-toggle" aria-pressed="false" aria-label="切换论文转矩曲线" data-label-en="Switch paper torque curves">
+            <img src="assets/paper-curve-a.png" width="175" height="133" alt="" loading="lazy">
+            <img class="alternate" src="assets/paper-curve-b.png" width="181" height="133" alt="" loading="lazy">
+            <span class="photo-caption"><span data-en="Switch curve">切换曲线</span><span aria-hidden="true">↔</span></span>
+          </button>
+          <div class="project-copy">
+            <p class="project-meta" data-en="Conference Paper · Motor Drive Circuits">会议论文 · 电机驱动电路</p>
             <h3 lang="en">Research on Freewheeling Optimization Method for Permanent Magnet Claw-Pole Stepper Motor Drive Circuits</h3>
             <p class="paper-byline" lang="en">Liang Shen, Yuting Zou, Luqing Jia, Xinyi Huang</p>
             <p class="paper-byline" lang="en">PSPE 2026 · pp. 198–201</p>
@@ -181,16 +181,10 @@
               <a class="button-link button-primary" href="https://ieeexplore.ieee.org/document/11780851/" target="_blank" rel="noopener" aria-label="在 IEEE Xplore 查看论文" data-label-en="View the paper on IEEE Xplore">Website <span aria-hidden="true">↗</span></a>
               <a class="button-link button-outline" href="assets/shen2026freewheeling.bib" download>BibTeX <span aria-hidden="true">↓</span></a>
             </div>
-          </div>
-          <div class="paper-figures">
-            <figure>
-              <a class="figure-link" href="assets/paper-curve-a.png" target="_blank" rel="noopener" aria-label="打开转矩曲线 A 原图" data-label-en="Open original torque curve A"><img src="assets/paper-curve-a.png" width="175" height="133" alt="" loading="lazy"></a>
-              <figcaption data-en="Torque curve A">转矩曲线 A</figcaption>
-            </figure>
-            <figure>
-              <a class="figure-link" href="assets/paper-curve-b.png" target="_blank" rel="noopener" aria-label="打开转矩曲线 B 原图" data-label-en="Open original torque curve B"><img src="assets/paper-curve-b.png" width="181" height="133" alt="" loading="lazy"></a>
-              <figcaption data-en="Torque curve B">转矩曲线 B</figcaption>
-            </figure>
+            <div class="paper-originals">
+              <a class="inline-link" href="assets/paper-curve-a.png" target="_blank" rel="noopener" data-en="Original curve A">曲线 A 原图</a>
+              <a class="inline-link" href="assets/paper-curve-b.png" target="_blank" rel="noopener" data-en="Original curve B">曲线 B 原图</a>
+            </div>
           </div>
         </article>
       </section>
