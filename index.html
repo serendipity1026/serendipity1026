@@ -4,19 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="贾储嘉，大连科技学院电气工程及其自动化本科生。关注电力系统、电力电子、电机驱动与自动控制。">
-  <meta name="theme-color" content="#13211f">
+  <meta name="theme-color" content="#0c0e12">
   <title>贾储嘉 · Chujia Jia</title>
   <style>
     :root {
-      --paper: #f5f3eb;
-      --card: #fcfbf7;
-      --ink: #182724;
-      --secondary: #505f58;
-      --green: #214d42;
-      --night: #13211f;
-      --cream: #f5f2e5;
-      --mint: #c4dcb8;
-      --edge: #d8dbd1;
+      color-scheme: dark;
+      --paper: #0e1014;
+      --card: #171b22;
+      --ink: #edf0f6;
+      --secondary: #acb5c2;
+      --accent: #b3cced;
+      --night: #0c0e12;
+      --edge: #303641;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -25,25 +24,25 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #518877; outline-offset: 5px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
     [hidden] { display: none !important; }
     .wrap { width: min(1180px, calc(100% - 88px)); margin-inline: auto; }
     .skip { position: fixed; inset: 10px auto auto 10px; z-index: 10; padding: 8px 14px; background: var(--card); transform: translateY(-140%); }
     .skip:focus { transform: translateY(0); }
-    .masthead { background: radial-gradient(ellipse at 12% 5%, #e1eadf, transparent 64%), #eef0e6; border-bottom: 1px solid var(--edge); }
-    .site-header { background: var(--night); color: var(--cream); border-bottom: 1px solid #ffffff24; }
+    .masthead { background: radial-gradient(ellipse at 15% 0%, #192331, transparent 62%), var(--paper); border-bottom: 1px solid var(--edge); }
+    .site-header { background: var(--night); border-bottom: 1px solid var(--edge); }
     .topbar, .nav-actions { display: flex; align-items: center; gap: 26px; }
     .topbar { min-height: 76px; justify-content: space-between; }
     .wordmark { display: inline-flex; align-items: center; gap: 11px; white-space: nowrap; font-weight: 700; }
-    .monogram { display: grid; place-items: center; width: 36px; aspect-ratio: 1; border: 1px solid #8dac99; border-radius: 50%; color: var(--mint); font: 700 12px/1 Consolas, monospace; letter-spacing: .04em; }
-    nav { display: flex; flex-wrap: wrap; gap: 10px 25px; font-size: 14px; color: #e0e6d9; }
+    .monogram { display: grid; place-items: center; width: 36px; aspect-ratio: 1; border: 1px solid #6180a6; border-radius: 50%; color: var(--accent); font: 700 12px/1 Consolas, monospace; letter-spacing: .04em; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 25px; font-size: 14px; color: var(--secondary); }
     nav a:hover, .inline-link:hover { text-decoration: underline; text-underline-offset: 5px; }
-    .language { border: 1px solid #95ad9e75; background: transparent; border-radius: 5px; padding: 4px 9px; min-width: 42px; cursor: pointer; font-size: 13px; font-weight: 650; }
+    .language { border: 1px solid var(--edge); background: transparent; border-radius: 5px; padding: 4px 9px; min-width: 42px; cursor: pointer; font-size: 13px; font-weight: 650; }
     .language:hover { background: #ffffff15; }
     .hero { display: grid; grid-template-columns: clamp(180px, 23vw, 244px) minmax(0, 1fr); align-items: center; gap: clamp(30px, 6vw, 76px); padding-block: clamp(36px, 6vw, 76px); }
     .hero-copy { min-width: 0; }
-    .school { display: inline-flex; gap: 11px; align-items: center; color: var(--green); font-size: 14px; letter-spacing: .04em; }
-    .school::before { content: ""; width: 20px; height: 1px; background: #6d9985; }
+    .school { display: inline-flex; gap: 11px; align-items: center; color: var(--accent); font-size: 14px; letter-spacing: .04em; }
+    .school::before { content: ""; width: 20px; height: 1px; background: #6d8baa; }
     h1 { font-size: clamp(48px, 6.2vw, 78px); line-height: 1.08; letter-spacing: -.06em; margin: 12px 0 4px; font-weight: 750; }
     html[lang="en"] h1 { font: 500 clamp(48px, 6.2vw, 80px)/1.04 Georgia, serif; letter-spacing: -.06em; }
     .other-name { color: var(--secondary); font: 400 clamp(19px, 2.3vw, 28px)/1.2 Georgia, "Microsoft YaHei", serif; }
@@ -52,37 +51,41 @@
     .intro span { color: var(--secondary); }
     .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
     .button-link { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 10px 15px; border: 1px solid transparent; border-radius: 5px; font-size: 14px; font-weight: 700; }
-    .button-outline { border-color: #9bae9e; color: var(--green); }
-    .button-outline:hover { background: #fcfdf8; border-color: var(--green); }
-    .button-green { background: var(--green); color: white; }
-    .button-green:hover { background: #123930; }
-    .hero-portrait { display: block; width: 100%; padding: 6px; border: 1px solid #aabdb0; background: #fafbf6; border-radius: 16px; box-shadow: 0 12px 28px #2d45321c; }
-    .hero-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 38%; border-radius: 10px; background: #dce5d9; }
-    .hero-portrait:hover { border-color: #518877; }
+    .button-outline { border-color: #49586d; color: var(--accent); }
+    .button-outline:hover { background: #202a37; border-color: var(--accent); }
+    .button-primary { background: var(--accent); color: #101a27; }
+    .button-primary:hover { background: #d1e3fa; }
+    .hero-portrait { display: block; width: 100%; padding: 6px; border: 1px solid #465469; background: var(--card); border-radius: 16px; box-shadow: 0 12px 28px #0005; }
+    .hero-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 38%; border-radius: 10px; background: var(--night); }
+    .hero-portrait:hover { border-color: var(--accent); }
     .section { padding-block: clamp(39px, 6vw, 72px); scroll-margin-top: 15px; }
     .section + .section { border-top: 1px solid var(--edge); }
     h2 { font-size: clamp(32px, 4.3vw, 52px); line-height: 1.12; letter-spacing: -.05em; font-weight: 750; }
     html[lang="en"] h2 { font-family: Georgia, serif; font-weight: 500; }
     .paper { margin-top: 24px; display: grid; grid-template-columns: 1fr 1.08fr; border: 1px solid var(--edge); border-radius: 11px; overflow: hidden; background: var(--card); }
     .paper-copy { align-self: center; padding: clamp(21px, 3.4vw, 41px); }
-    .paper-meta, .project-meta { color: var(--green); font-size: 13px; font-weight: 750; }
-    .paper h3 { margin: 9px 0 20px; max-width: 52ch; font-size: clamp(19px, 2.35vw, 31px); font-weight: 700; line-height: 1.29; letter-spacing: -.025em; text-wrap: balance; }
-    .paper-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-content: center; background: #e9ede4; padding: clamp(12px, 2.4vw, 28px); }
+    .paper-meta, .project-meta { color: var(--accent); font-size: 13px; font-weight: 750; }
+    .paper h3 { margin: 9px 0 12px; max-width: 52ch; font-size: clamp(19px, 2.35vw, 31px); font-weight: 700; line-height: 1.29; letter-spacing: -.025em; text-wrap: balance; }
+    .paper-byline { margin-block: 0 3px; color: var(--secondary); font-size: 14px; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .paper-links .button-link { padding: 6px 11px; }
+    .paper-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-content: center; background: #11151c; padding: clamp(12px, 2.4vw, 28px); }
     .paper-figures figure { min-width: 0; }
-    .figure-link { display: block; padding: 10px; background: white; border: 1px solid #d6dcd0; border-radius: 6px; }
-    .figure-link:hover { border-color: #6f9987; }
+    .figure-link { display: block; padding: 10px; background: #fff; border: 1px solid var(--edge); border-radius: 6px; }
+    .figure-link:hover { border-color: var(--accent); }
     .figure-link img { width: 100%; aspect-ratio: 1.31; object-fit: contain; }
     figcaption { margin-top: 6px; color: var(--secondary); font-size: 12px; }
-    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; }
-    .project { overflow: hidden; border: 1px solid var(--edge); border-radius: 11px; background: var(--card); min-width: 0; }
-    .photo-toggle { display: block; padding: 0; border: 0; background: #233a34; position: relative; width: 100%; aspect-ratio: 1.92; overflow: hidden; cursor: pointer; color: white; text-align: start; }
-    .photo-toggle:focus-visible { outline-offset: -5px; outline-color: #e4f7d9; }
+    .projects { display: grid; gap: 17px; margin-top: 24px; }
+    .project { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(0, 1.6fr); align-items: stretch; overflow: hidden; border: 1px solid var(--edge); border-radius: 11px; background: var(--card); min-width: 0; }
+    .photo-toggle { display: block; padding: 0; border: 0; background: var(--night); position: relative; width: 100%; min-height: 100%; aspect-ratio: 1.92; overflow: hidden; cursor: pointer; color: white; text-align: start; }
+    .photo-toggle:focus-visible { outline-offset: -5px; }
     .photo-toggle img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: opacity .25s ease; }
     .photo-toggle .alternate { opacity: 0; }
     .photo-toggle[aria-pressed="true"] .alternate { opacity: 1; }
     @media (hover: hover) and (pointer: fine) { .photo-toggle:hover .alternate { opacity: 1; } }
-    .photo-caption { position: absolute; inset: auto 12px 12px auto; display: inline-flex; align-items: center; gap: 8px; padding: 5px 9px; color: #fff; background: #11201dea; border: 1px solid #ffffff40; border-radius: 5px; font-size: 12px; }
-    .project-copy { padding: 19px clamp(16px, 2.3vw, 28px) 23px; }
+    .photo-caption { position: absolute; inset: auto 12px 12px auto; display: inline-flex; align-items: center; gap: 8px; padding: 5px 9px; color: #fff; background: #101720eb; border: 1px solid #ffffff40; border-radius: 5px; font-size: 12px; }
+    .project-copy { align-self: center; padding: clamp(18px, 3vw, 38px); }
+    .project-copy:only-child { grid-column: 1 / -1; }
     .project-meta { display: flex; flex-wrap: wrap; gap: 5px 10px; }
     .project-meta span + span::before { content: "·"; margin-right: 10px; }
     .project h3 { margin-top: 4px; font-size: clamp(19px, 2.15vw, 28px); line-height: 1.28; }
@@ -93,15 +96,15 @@
     .honors { list-style: none; padding: 0; margin: 0; }
     .honors li { display: grid; grid-template-columns: 12px 1fr; align-items: baseline; gap: 12px; padding: 11px 0; font-weight: 650; border-bottom: 1px solid var(--edge); }
     .honors li:first-child { padding-top: 0; }
-    .honors li::before { content: ""; width: 7px; height: 7px; align-self: start; margin-top: 9px; border-radius: 50%; background: #658d74; }
-    .contact { background: #e6ede3; color: var(--ink); }
+    .honors li::before { content: ""; width: 7px; height: 7px; align-self: start; margin-top: 9px; border-radius: 50%; background: #8aa9d0; }
+    .contact { background: var(--night); border-top: 1px solid var(--edge); }
     .contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
-    .contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; align-items: center; border: 1px solid #cdd9cb; background: #f8faf5; border-radius: 7px; padding: 14px 16px; }
-    .contact-card:hover { border-color: #709583; background: #fff; }
+    .contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; align-items: center; border: 1px solid var(--edge); background: var(--card); border-radius: 7px; padding: 14px 16px; }
+    .contact-card:hover { border-color: #718cab; background: #1b2634; }
     .contact-card small { display: block; color: var(--secondary); font-size: 12px; }
-    .contact-card strong { display: block; overflow-wrap: anywhere; color: var(--green); font-size: 14px; }
-    .contact-card .arrow { color: var(--green); }
-    .site-footer { border-top: 1px solid #ffffff25; background: var(--night); color: #d1ddcf; }
+    .contact-card strong { display: block; overflow-wrap: anywhere; color: var(--accent); font-size: 14px; }
+    .contact-card .arrow { color: var(--accent); }
+    .site-footer { border-top: 1px solid var(--edge); background: var(--night); color: var(--secondary); }
     .footer-inner { display: flex; justify-content: space-between; gap: 12px; padding-block: 19px; font-size: 13px; }
     @media (max-width: 860px) {
       .wrap { width: calc(100% - 56px); }
@@ -114,7 +117,7 @@
       .topbar { align-items: start; padding-block: 12px; flex-wrap: wrap; gap: 9px; }
       .nav-actions { display: contents; }
       nav { order: 1; width: 100%; }
-      .hero, .paper, .projects, .profile-row, .contact-grid { grid-template-columns: 1fr; }
+      .hero, .paper, .project, .profile-row, .contact-grid { grid-template-columns: 1fr; }
       .hero { gap: 19px; padding-block: 26px 33px; text-align: center; }
       .hero-portrait { width: 146px; justify-self: center; }
       .intro { margin-top: 19px; }
@@ -157,7 +160,7 @@
         <p class="other-name" lang="en" data-en="贾储嘉">Chujia Jia</p>
         <p class="intro" lang="en"><strong>Electrical Engineering &amp; Automation Undergraduate</strong> <span>| Power Systems · Power Electronics · Motor Drives · Automatic Control</span></p>
         <div class="actions">
-          <a class="button-link button-green" href="#learning"><span data-en="View Academic Work">查看学术成果</span><span aria-hidden="true">↓</span></a>
+          <a class="button-link button-primary" href="#learning"><span data-en="View Academic Work">查看学术成果</span><span aria-hidden="true">↓</span></a>
           <a class="button-link button-outline" href="mailto:jiachujia1026@gmail.com"><span data-en="Email">邮箱</span></a>
           <a class="button-link button-outline" href="https://github.com/serendipity1026" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
         </div>
@@ -172,7 +175,13 @@
           <div class="paper-copy">
             <p class="paper-meta" data-en="Conference Paper · Motor Drive Circuits">会议论文 · 电机驱动电路</p>
             <h3 lang="en">Research on Freewheeling Optimization Method for Permanent Magnet Claw-Pole Stepper Motor Drive Circuits</h3>
-            <a class="button-link button-green" href="https://ieeexplore.ieee.org/document/11780851/" target="_blank" rel="noopener"><span data-en="Read on IEEE Xplore">在 IEEE Xplore 查看论文</span><span aria-hidden="true">↗</span></a>
+            <p class="paper-byline" lang="en">Liang Shen, Yuting Zou, Luqing Jia, Xinyi Huang</p>
+            <p class="paper-byline" lang="en">PSPE 2026 · pp. 198–201</p>
+            <div class="paper-links">
+              <a class="button-link button-outline" href="https://doi.org/10.1109/PSPE71359.2026.11780851" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
+              <a class="button-link button-primary" href="https://ieeexplore.ieee.org/document/11780851/" target="_blank" rel="noopener" aria-label="在 IEEE Xplore 查看论文" data-label-en="View the paper on IEEE Xplore">Website <span aria-hidden="true">↗</span></a>
+              <a class="button-link button-outline" href="assets/shen2026freewheeling.bib" download>BibTeX <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
           <div class="paper-figures">
             <figure>
@@ -198,7 +207,7 @@
             <div class="project-copy">
               <p class="project-meta"><span data-en="Team project">团队项目</span><span data-en="Illustrative images">场景示意</span></p>
               <h3 data-en="Roadway Water Accumulation">道路积水</h3>
-              <p data-en="Worked with a team on a project addressing water accumulation on roads.">与团队共同开展面向道路积水问题的项目。</p>
+              <p data-en="An Arduino-based early warning system that converts water-level measurements into roadside LED messages and remote alerts, with multiple thresholds for graded warnings.">基于 Arduino 的道路积水预警系统，将水位测量数据转换为路边 LED 提示和远程警报，并按多个水位阈值发出分级预警。</p>
             </div>
           </article>
           <article class="project">
@@ -210,7 +219,14 @@
             <div class="project-copy">
               <p class="project-meta"><span data-en="Embedded systems project">嵌入式项目</span><span data-en="Illustrative images">场景示意</span></p>
               <h3 data-en="STM32 Smart Irrigation System">STM32 智能灌溉系统</h3>
-              <p data-en="Built a smart irrigation system using an STM32 microcontroller.">以 STM32 微控制器为核心，搭建智能灌溉系统。</p>
+              <p data-en="An AIoT irrigation system integrating CC2530 ZigBee sensing, STM32 edge control, a 4G host interface, and dual-output support vector regression (SVR) prediction.">一套集成 CC2530 ZigBee 感测、STM32 边缘控制、4G 主机接口和双输出 SVR 预测的 AIoT 灌溉系统。</p>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-copy">
+              <p class="project-meta"><span data-en="National 3D Digital Innovation Design Competition">全国三维数字化创新设计大赛</span><span data-en="Metaverse · 3D / XR / AI">元宇宙 3D / XR / AI 赛道</span></p>
+              <h3 data-en="Autonomous Delivery Vehicle Redesign and System Concept">无人配送车的改进与系统方案</h3>
+              <p data-en="A last-mile delivery concept that rethinks the vehicle body and cargo layout. The proposal uses 3D models and an XR scene to illustrate driving, stopping, and parcel handoff, and explores AI-assisted obstacle detection and route planning.">面向末端配送场景，提出车体结构和载货布局的改进方案。通过三维建模和 XR 场景展示车辆行驶、停靠与交付流程，并将 AI 辅助障碍物识别和路径规划纳入系统设计。</p>
             </div>
           </article>
         </div>
