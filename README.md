@@ -1,5 +1,7 @@
 ## jiachu jia Homepage
 
+[查看个人主页](https://serendipity1026.github.io/serendipity1026/)
+
 <!--
 **serendipity1026/serendipity1026** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
