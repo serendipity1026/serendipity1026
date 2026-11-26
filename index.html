@@ -92,7 +92,7 @@
     .honors li:first-child { padding-top: 0; }
     .honors li::before { content: ""; width: 7px; height: 7px; align-self: start; margin-top: 9px; border-radius: 50%; background: #8aa9d0; }
     .contact { background: var(--night); border-top: 1px solid var(--edge); }
-    .contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+    .contact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
     .contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; align-items: center; border: 1px solid var(--edge); background: var(--card); border-radius: 7px; padding: 14px 16px; }
     .contact-card:hover { border-color: #718cab; background: #1b2634; }
     .contact-card small { display: block; color: var(--secondary); font-size: 12px; }
@@ -100,6 +100,9 @@
     .contact-card .arrow { color: var(--accent); }
     .site-footer { border-top: 1px solid var(--edge); background: var(--night); color: var(--secondary); }
     .footer-inner { display: flex; justify-content: space-between; gap: 12px; padding-block: 19px; font-size: 13px; }
+    @media (max-width: 1020px) {
+      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 860px) {
       .wrap { width: calc(100% - 56px); }
       .hero { gap: 30px; }
@@ -157,6 +160,7 @@
           <a class="button-link button-primary" href="#learning"><span data-en="View Academic Work">查看学术成果</span><span aria-hidden="true">↓</span></a>
           <a class="button-link button-outline" href="mailto:jiachujia1026@gmail.com"><span data-en="Email">邮箱</span></a>
           <a class="button-link button-outline" href="https://github.com/serendipity1026" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button-link button-outline" href="https://orcid.org/0009-0000-9535-7077" target="_blank" rel="noopener">ORCID <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -252,6 +256,7 @@
           <a class="contact-card" href="mailto:jiachujia1026@gmail.com"><span><small>Gmail</small><strong>jiachujia1026@gmail.com</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
           <a class="contact-card" href="mailto:2904498174@qq.com"><span><small data-en="QQ Mail">QQ 邮箱</small><strong>2904498174@qq.com</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
           <a class="contact-card" href="https://github.com/serendipity1026" target="_blank" rel="noopener"><span><small>GitHub</small><strong>@serendipity1026</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="contact-card" href="https://orcid.org/0009-0000-9535-7077" target="_blank" rel="noopener"><span><small>ORCID</small><strong>0009-0000-9535-7077</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
